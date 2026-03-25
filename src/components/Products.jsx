@@ -80,6 +80,7 @@ const Products = () => {
                 src={brand.img}
                 alt={brand.name}
                 className="brand-image-bg"
+                loading="lazy"
                 onError={(e) => {
                   e.target.onerror = null;
                   e.target.src = `https://placehold.co/600x600/0a192f/d4af37?text=${encodeURIComponent(brand.name)}`;
