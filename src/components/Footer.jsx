@@ -37,15 +37,15 @@ const Footer = () => {
             <div className="contact-detail">
               <strong>Office:</strong> Kigali City Market, Nyarugenge<br/>
               <strong>President:</strong> Eric Twagirayezu<br/>
-              📞 +250 788 863 957
+              📞 +250 788 863 957 <a href="https://wa.me/250788863957" target="_blank" rel="noopener noreferrer" className="wa-link">💬 WhatsApp</a>
             </div>
             <div className="contact-detail">
               <strong>V/President:</strong> Ingabire Mary<br/>
-              📞 +250 788 525 397
+              📞 +250 788 525 397 <a href="https://wa.me/250788525397" target="_blank" rel="noopener noreferrer" className="wa-link">💬 WhatsApp</a>
             </div>
             <div className="contact-detail">
               <strong>Secretary:</strong> Aida Mukase<br/>
-              📞 +250 786 058 641<br/>
+              📞 +250 786 058 641 <a href="https://wa.me/250786058641" target="_blank" rel="noopener noreferrer" className="wa-link">💬 WhatsApp</a><br/>
               ✉️ <a href="mailto:rwandacosmeticsimporterscooper@gmail.com">rwandacosmeticsimporterscooper@gmail.com</a>
             </div>
           </div>
