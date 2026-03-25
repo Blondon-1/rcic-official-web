@@ -24,6 +24,24 @@ const Intro = () => {
               <p>To become Rwanda’s most trusted cooperative in cosmetic importation and distribution, known for reliability, quality, and customer care.</p>
             </div>
           </div>
+
+          <div className="regulatory-compliance">
+            <h4>Regulatory Excellence & Compliance</h4>
+            <div className="compliance-grid">
+              <div className="comp-item">
+                <span className="comp-icon">🇷🇼</span>
+                <p><strong>RRA Compliant</strong><br/>100% Tax & Customs Accountability</p>
+              </div>
+              <div className="comp-item">
+                <span className="comp-icon">🛡️</span>
+                <p><strong>Rwanda FDA Approved</strong><br/>Certified for Safety & Health Standards</p>
+              </div>
+              <div className="comp-item">
+                <span className="comp-icon">✅</span>
+                <p><strong>RSB Certified</strong><br/>Meeting Rwanda Standards Board Quality</p>
+              </div>
+            </div>
+          </div>
         </div>
         
         <div className="intro-certificate">
