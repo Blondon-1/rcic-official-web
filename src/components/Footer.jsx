@@ -35,6 +35,7 @@ const Footer = () => {
           <div className="footer-contact">
             <h3>Contact Directory</h3>
             <div className="contact-detail">
+              <strong>Office:</strong> Kigali City Market, Nyarugenge<br/>
               <strong>President:</strong> Eric Twagirayezu<br/>
               📞 +250 788 863 957
             </div>
