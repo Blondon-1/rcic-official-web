@@ -1,0 +1,20 @@
+{
+  "short_name": "RCIC App",
+  "name": "Rwanda Cosmetics Importers Cooperative App",
+  "icons": [
+    {
+      "src": "/assets/logo.jpg",
+      "type": "image/jpeg",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/assets/logo.jpg",
+      "type": "image/jpeg",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#0b132b",
+  "background_color": "#0b132b"
+}

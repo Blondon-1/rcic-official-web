@@ -1,0 +1,119 @@
+
+/* ==========================================
+   GLOBAL SITE-WIDE ANIMATIONS
+   ========================================== */
+
+/* ── Keyframe Library ── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.85); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes pulse-gold {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.5); }
+  50%       { box-shadow: 0 0 0 18px rgba(212, 175, 55, 0); }
+}
+@keyframes float-up {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-12px); }
+}
+@keyframes shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position:  400px 0; }
+}
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes bounce-in {
+  0%   { opacity: 0; transform: scale(0.3); }
+  50%  { opacity: 1; transform: scale(1.08); }
+  70%  { transform: scale(0.95); }
+  100% { transform: scale(1); }
+}
+@keyframes glow-border {
+  0%, 100% { border-color: rgba(212, 175, 55, 0.3); box-shadow: 0 0 0 0 rgba(212,175,55,0); }
+  50%       { border-color: rgba(212, 175, 55, 0.9); box-shadow: 0 0 20px rgba(212,175,55,0.3); }
+}
+
+/* ── Scroll-Reveal Base States ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.85);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible,
+.reveal-left.visible,
+.reveal-right.visible,
+.reveal-scale.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ── Stagger children delays ── */
+.stagger > *:nth-child(1) { transition-delay: 0s;    }
+.stagger > *:nth-child(2) { transition-delay: 0.12s; }
+.stagger > *:nth-child(3) { transition-delay: 0.24s; }
+.stagger > *:nth-child(4) { transition-delay: 0.36s; }
+.stagger > *:nth-child(5) { transition-delay: 0.48s; }
+
+/* ── Always-on continuous animations ── */
+.float-anim { animation: float-up 3.5s ease-in-out infinite; }
+.pulse-btn  { animation: pulse-gold 2.2s infinite; }
+.spin-slow  { animation: spin-slow 12s linear infinite; }
+
+/* ── Animated Section Titles ── */
+.shimmer-text {
+  background: linear-gradient(90deg,
+    var(--color-primary) 25%,
+    #fff8dc 50%,
+    var(--color-primary) 75%
+  );
+  background-size: 400px 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+/* ── Glowing card border loop ── */
+.glow-border { animation: glow-border 2.5s ease-in-out infinite; }
+
+/* ── Delay utilities ── */
+.delay-100 { animation-delay: 0.1s !important; transition-delay: 0.1s !important; }
+.delay-200 { animation-delay: 0.2s !important; transition-delay: 0.2s !important; }
+.delay-300 { animation-delay: 0.3s !important; transition-delay: 0.3s !important; }
+.delay-400 { animation-delay: 0.4s !important; transition-delay: 0.4s !important; }
+
+/* ── Entry animation for cards ── */
+.animate-fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}

@@ -1,0 +1,179 @@
+.community-section {
+  padding: 6rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.customers-wrapper {
+  margin-bottom: 5rem;
+}
+
+.community-intro {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 3.5rem auto;
+  font-size: 1.15rem;
+  color: var(--color-text-muted);
+}
+
+.customers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.customer-card {
+  background: var(--color-surface);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+}
+
+.customer-card:hover {
+  transform: translateY(-12px);
+  border-color: var(--color-primary);
+  box-shadow: 0 20px 40px rgba(212, 175, 55, 0.2);
+}
+
+.customer-image-wrapper {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.customer-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.customer-card:hover .customer-img {
+  transform: scale(1.15);
+}
+
+.customer-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 25, 47, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.customer-card:hover .customer-overlay {
+  opacity: 1;
+}
+
+.customer-desc {
+  color: #fff;
+  text-align: center;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  transform: translateY(20px);
+  transition: transform 0.4s ease;
+}
+
+.customer-card:hover .customer-desc {
+  transform: translateY(0);
+}
+
+.customer-info {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.customer-info h4 {
+  font-family: var(--font-heading);
+  color: var(--color-text);
+  font-size: 1.25rem;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.customer-card:hover .customer-info h4 {
+  color: var(--color-primary);
+}
+
+/* ── Quality Commitment Section ── */
+.quality-commitment {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  padding: 4rem;
+  border-radius: var(--radius-xl, 24px);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.quality-content {
+  flex: 2;
+}
+
+.quality-content h2 {
+  color: var(--color-primary);
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+}
+
+.quality-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--color-text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.quality-badge-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.quality-badge {
+  width: 180px;
+  height: 180px;
+  background: linear-gradient(135deg, var(--color-primary), #b8860b);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #0a192f;
+  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+  animation: float-anim 4s ease-in-out infinite;
+}
+
+.badge-icon {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.badge-text {
+  font-weight: 800;
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 992px) {
+  .quality-commitment {
+    flex-direction: column;
+    padding: 3rem 2rem;
+    text-align: center;
+    gap: 3rem;
+  }
+}

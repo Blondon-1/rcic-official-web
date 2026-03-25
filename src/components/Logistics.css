@@ -1,0 +1,104 @@
+.logistics-section {
+  padding: 6rem 0;
+  background-color: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.logistics-intro {
+  max-width: 800px;
+  margin: 0 auto 4rem auto;
+  text-align: center;
+  font-size: 1.15rem;
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+.logistics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+}
+
+.logistics-card {
+  position: relative;
+  height: 450px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+  border: 1px solid var(--color-border);
+}
+
+.logistics-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(212, 175, 55, 0.2);
+  border-color: var(--color-primary);
+}
+
+.logistics-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  transform: scale(1.05); /* Prevents black borders during zoom effect */
+  transition: transform 0.6s ease;
+}
+
+.logistics-card:hover .logistics-video {
+  transform: scale(1.15); /* Slow zoom effect on hover like a real commercial */
+}
+
+.logistics-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(10, 25, 47, 0.95) 0%, rgba(10, 25, 47, 0.6) 50%, rgba(10, 25, 47, 0.3) 100%);
+  z-index: 1;
+  transition: background 0.4s ease;
+}
+
+.logistics-card:hover .logistics-overlay {
+  background: linear-gradient(to top, rgba(10, 25, 47, 0.95) 0%, rgba(212, 175, 55, 0.2) 100%);
+}
+
+.logistics-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 2.5rem 2rem;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.logistics-content .icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+}
+
+.logistics-content h3 {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+}
+
+.logistics-content p {
+  font-size: 1.05rem;
+  color: #fff;
+  line-height: 1.5;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+  opacity: 0.9;
+}
