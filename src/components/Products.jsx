@@ -7,16 +7,12 @@ import './Products.css';
 const Products = () => {
   const { isAdmin } = useAuth();
   const { brands, addProduct, deleteProduct, updateProduct } = useProducts();
-  const { t } = useLanguage();
+  const { language, setLanguage, t } = useLanguage();
 
   // Modals & Navigation
   const [selectedBrand, setSelectedBrand] = useState(null);
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
-
-  // Filter & Search States
-  const [searchTerm, setSearchTerm] = useState('');
-  const [activeCategory, setActiveCategory] = useState('All');
 
   // Form States
   const [newProduct, setNewProduct] = useState({ name: '', desc: '', img: '', category: 'General' });
@@ -24,23 +20,6 @@ const Products = () => {
 
   const categories = ['All', 'Skincare', 'Haircare', 'Perfumes', 'Hygiene', 'General'];
   
-  const categoryMap = {
-    'All': t('all'),
-    'Skincare': t('skincare'),
-    'Haircare': t('haircare'),
-    'Perfumes': t('perfumes'),
-    'Hygiene': t('hygiene'),
-    'General': t('general')
-  };
-
-  // Filtering Logic
-  const filteredBrands = brands.filter(brand => {
-    const matchesSearch = brand.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
-                          brand.desc.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesCategory = activeCategory === 'All' || brand.category === activeCategory;
-    return matchesSearch && matchesCategory;
-  });
-
   const handleAddSubmit = (e) => {
     e.preventDefault();
     if (!newProduct.name || !newProduct.desc) return;
@@ -77,79 +56,54 @@ const Products = () => {
     <section id="products" className="section products-section">
       <div className="container" style={{ maxWidth: '1400px' }}>
         <div className="products-header">
-          <div className="header-top">
-            <h2 className="section-title">{t('productsTitle')}</h2>
-            {isAdmin && (
-              <button className="btn btn-outline admin-add-btn" onClick={() => setIsAddModalOpen(true)}>
-                + Admin: Add Product
-              </button>
-            )}
-          </div>
-          
-          <div className="search-filter-controls">
-            <div className="search-box">
-              <span className="search-icon">🔍</span>
-              <input 
-                type="text" 
-                placeholder={t('searchPlaceholder')} 
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="search-input"
-              />
-            </div>
-            
-            <div className="category-filters">
-              {categories.map(cat => (
-                <button 
-                  key={cat}
-                  className={`filter-chip ${activeCategory === cat ? 'active' : ''}`}
-                  onClick={() => setActiveCategory(cat)}
-                >
-                  {categoryMap[cat]}
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
+           <h2 className="section-title">{t('productsTitle')}</h2>
+           <div className="products-intro-line">
+             <p className="products-lead-text">{t('productsLead')}</p>
+             <div className="catalog-lang-switcher">
+               <select value={language} onChange={(e) => setLanguage(e.target.value)} className="lang-select-catalog">
+                 <option value="en">English</option>
+                 <option value="rw">Kinyarwanda</option>
+                 <option value="fr">Français</option>
+               </select>
+             </div>
+           </div>
+           {isAdmin && (
+             <button className="btn btn-outline admin-add-btn" onClick={() => setIsAddModalOpen(true)} style={{ marginTop: '1rem' }}>
+               + Admin: Add Product
+             </button>
+           )}
+         </div>
 
         <div className="brand-massive-grid">
-          {filteredBrands.length > 0 ? (
-            filteredBrands.map((brand) => (
-              <div
-                className="brand-ad-card"
-                key={brand.id}
-                onClick={() => setSelectedBrand(brand)}
-              >
-                <div className="category-tag">{brand.category}</div>
-                <img
-                  src={brand.img}
-                  alt={brand.name}
-                  className="brand-image-bg"
-                  loading="lazy"
-                  onError={(e) => {
-                    e.target.onerror = null;
-                    e.target.src = `https://placehold.co/600x600/0a192f/d4af37?text=${encodeURIComponent(brand.name)}`;
-                  }}
-                />
-                <div className="brand-ad-overlay"></div>
-
-                <div className="brand-ad-content">
-                  <h3 className="brand-name">{brand.name}</h3>
-                  <p className="brand-desc">{brand.desc}</p>
-                  <div className="ad-action">
-                    <span className="ad-action-line"></span>
-                    <span className="ad-action-text">{isAdmin ? 'Manage' : 'View Details'}</span>
-                  </div>
-                </div>
-              </div>
-            ))
-          ) : (
-            <div className="no-results">
-              <p>No products found matching "{searchTerm}" in {activeCategory}.</p>
-              <button className="btn btn-outline" onClick={() => {setSearchTerm(''); setActiveCategory('All');}}>Clear All Filters</button>
-            </div>
-          )}
-        </div>
+           {brands.map((brand) => (
+             <div
+               className="brand-ad-card"
+               key={brand.id}
+               onClick={() => setSelectedBrand(brand)}
+             >
+               <img
+                 src={brand.img}
+                 alt={brand.name}
+                 className="brand-image-bg"
+                 loading="lazy"
+                 onError={(e) => {
+                   e.target.onerror = null;
+                   e.target.src = `https://placehold.co/600x600/0a192f/d4af37?text=${encodeURIComponent(brand.name)}`;
+                 }}
+               />
+               <div className="brand-ad-overlay"></div>
+ 
+               <div className="brand-ad-content">
+                 <h3 className="brand-name">{brand.name}</h3>
+                 <p className="brand-desc">{brand.desc}</p>
+                 <div className="ad-action">
+                   <span className="ad-action-line"></span>
+                   <span className="ad-action-text">{isAdmin ? 'Manage' : 'View Details'}</span>
+                 </div>
+               </div>
+             </div>
+           ))}
+         </div>
       </div>
 
       {selectedBrand && (

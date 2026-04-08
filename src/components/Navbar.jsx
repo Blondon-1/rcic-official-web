@@ -29,14 +29,6 @@ const Navbar = () => {
           <li><a href="#products" onClick={() => setIsOpen(false)}>{t('products')}</a></li>
           <li><a href="#news" onClick={() => setIsOpen(false)}>{t('news')}</a></li>
           <li><a href="#contact" onClick={() => setIsOpen(false)}>{t('contact')}</a></li>
-          
-          <li className="lang-switcher">
-            <select value={language} onChange={(e) => setLanguage(e.target.value)} className="lang-select">
-              <option value="en">EN</option>
-              <option value="rw">RW</option>
-              <option value="fr">FR</option>
-            </select>
-          </li>
 
           <li>
             <Link to="/admin" className="btn btn-outline nav-login-btn" onClick={() => setIsOpen(false)} style={{ padding: '0.4rem 1.2rem', marginLeft: '1rem', border: '2px solid var(--color-primary)' }}>
