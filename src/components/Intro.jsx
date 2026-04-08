@@ -11,7 +11,7 @@ const Intro = () => {
             Rwanda Cosmetics Importers Cooperative is a vibrant, member-driven cooperative based in **Kigali City Market, Nyarugenge**, committed to supplying high-quality, safe, and affordable cosmetic products across Rwanda.
           </p>
           <p>
-            With a passion for beauty and a heart for service, the cooperative connects Rwanda to trusted international brands while ensuring that every product meets local standards. Whether it's the highest quality hair care, premium skincare, or signature perfumes, we believe beauty should be accessible, authentic, and empowering for everyone.
+            With a passion for beauty and a heart for service, the cooperative connects Rwanda to trusted international brands while ensuring that every product meets local standards. Whether it's the highest quality hair care, premium skincare, or signature perfumes, we are the #1 authorized distributor and wholesale partner for beauty businesses in Kigali and across the provinces.
           </p>
 
           <div className="mission-vision-cards">

@@ -13,6 +13,7 @@ import Footer from './components/Footer';
 import Stats from './components/Stats';
 import Newsletter from './components/Newsletter';
 import Logistics from './components/Logistics';
+import FAQ from './components/FAQ';
 import ScrollReveal from './components/ScrollReveal';
 import Login from './components/Auth/Login';
 import AdminDashboard from './components/Admin/Admin';
@@ -53,6 +54,7 @@ const LandingPage = () => (
         <Testimonials />
         <Newsletter />
         <Customers />
+        <FAQ />
       </main>
       <Footer />
       <a href="mailto:rwandacosmeticsimporterscooper@gmail.com" className="email-float-btn">
