@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://rcic.rw/sitemap.xml
+Sitemap: https://rcic-official-web.vercel.app/sitemap.xml
