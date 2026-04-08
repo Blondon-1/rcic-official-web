@@ -14,7 +14,8 @@ const AdminDashboard = () => {
   const [editingProduct, setEditingProduct] = useState(null);
   
   // Form States
-  const [formData, setFormData] = useState({ name: '', desc: '', img: '' });
+  const [formData, setFormData] = useState({ name: '', desc: '', img: '', category: 'General' });
+  const categories = ['Skincare', 'Haircare', 'Perfumes', 'Hygiene', 'General'];
 
   const handleLogout = async () => {
     try {
@@ -28,7 +29,7 @@ const AdminDashboard = () => {
   const handleAddSubmit = (e) => {
     e.preventDefault();
     addProduct(formData);
-    setFormData({ name: '', desc: '', img: '' });
+    setFormData({ name: '', desc: '', img: '', category: 'General' });
     setIsAddModalOpen(false);
   };
 
@@ -104,6 +105,7 @@ const AdminDashboard = () => {
                   <tr>
                     <th>Product</th>
                     <th>Image</th>
+                    <th>Category</th>
                     <th>Status</th>
                     <th>Actions</th>
                   </tr>
@@ -118,6 +120,7 @@ const AdminDashboard = () => {
                       <td>
                         <img src={brand.img} alt={brand.name} style={{ width: '40px', height: '40px', borderRadius: '4px', objectFit: 'cover' }} />
                       </td>
+                      <td><span className="category-badge">{brand.category || 'General'}</span></td>
                       <td><span className="status-badge active">Visible</span></td>
                       <td>
                         <button className="edit-link" onClick={() => startEdit(brand)}>Edit</button>
@@ -204,6 +207,12 @@ const AdminDashboard = () => {
                 value={formData.img}
                 onChange={e => setFormData({...formData, img: e.target.value})}
               />
+              <select 
+                value={formData.category}
+                onChange={e => setFormData({...formData, category: e.target.value})}
+              >
+                {categories.map(cat => <option key={cat} value={cat}>{cat}</option>)}
+              </select>
               <div className="modal-actions">
                 <button type="submit" className="save-btn">Save Product</button>
                 <button type="button" className="cancel-btn" onClick={() => setIsAddModalOpen(false)}>Cancel</button>
@@ -238,6 +247,12 @@ const AdminDashboard = () => {
                 value={editingProduct.img}
                 onChange={e => setEditingProduct({...editingProduct, img: e.target.value})}
               />
+              <select 
+                value={editingProduct.category}
+                onChange={e => setEditingProduct({...editingProduct, category: e.target.value})}
+              >
+                {categories.map(cat => <option key={cat} value={cat}>{cat}</option>)}
+              </select>
               <div className="modal-actions">
                 <button type="submit" className="save-btn">Update Product</button>
                 <button type="button" className="cancel-btn" onClick={() => setEditingProduct(null)}>Cancel</button>
