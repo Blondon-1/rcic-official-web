@@ -57,16 +57,7 @@ const Products = () => {
       <div className="container" style={{ maxWidth: '1400px' }}>
         <div className="products-header">
            <h2 className="section-title">{t('productsTitle')}</h2>
-           <div className="products-intro-line">
-             <p className="products-lead-text">{t('productsLead')}</p>
-             <div className="catalog-lang-switcher">
-               <select value={language} onChange={(e) => setLanguage(e.target.value)} className="lang-select-catalog">
-                 <option value="en">English</option>
-                 <option value="rw">Kinyarwanda</option>
-                 <option value="fr">Français</option>
-               </select>
-             </div>
-           </div>
+           <p className="products-lead-text">{t('productsLead')}</p>
            {isAdmin && (
              <button className="btn btn-outline admin-add-btn" onClick={() => setIsAddModalOpen(true)} style={{ marginTop: '1rem' }}>
                + Admin: Add Product
