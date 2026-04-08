@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import { ProductProvider } from './context/ProductContext';
+import { LanguageProvider } from './context/LanguageContext';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Intro from './components/Intro';
@@ -14,6 +15,8 @@ import Stats from './components/Stats';
 import Newsletter from './components/Newsletter';
 import Logistics from './components/Logistics';
 import FAQ from './components/FAQ';
+import News from './components/News';
+import JoinCoop from './components/JoinCoop';
 import ScrollReveal from './components/ScrollReveal';
 import Login from './components/Auth/Login';
 import AdminDashboard from './components/Admin/Admin';
@@ -49,6 +52,7 @@ const LandingPage = () => (
         <Hero />
         <Stats />
         <Intro />
+        <News />
         <Logistics />
         <Objectives />
         <Products />
@@ -56,6 +60,7 @@ const LandingPage = () => (
         <Newsletter />
         <Customers />
         <FAQ />
+        <JoinCoop />
       </main>
       <Footer />
       <a href="mailto:rwandacosmeticsimporterscooper@gmail.com" className="email-float-btn">
@@ -73,26 +78,28 @@ function App() {
     <Router>
       <AuthProvider>
         <ProductProvider>
-          <Routes>
-            {/* Public Website */}
-            <Route path="/" element={<LandingPage />} />
-            
-            {/* Admin Authentication */}
-            <Route path="/login" element={<Login />} />
-            
-            {/* Protected Admin Dashboard */}
-            <Route 
-              path="/admin" 
-              element={
-                <ProtectedRoute>
-                  <AdminDashboard />
-                </ProtectedRoute>
-              } 
-            />
-            
-            {/* Fallback */}
-            <Route path="*" element={<LandingPage />} />
-          </Routes>
+          <LanguageProvider>
+            <Routes>
+              {/* Public Website */}
+              <Route path="/" element={<LandingPage />} />
+              
+              {/* Admin Authentication */}
+              <Route path="/login" element={<Login />} />
+              
+              {/* Protected Admin Dashboard */}
+              <Route 
+                path="/admin" 
+                element={
+                  <ProtectedRoute>
+                    <AdminDashboard />
+                  </ProtectedRoute>
+                } 
+              />
+              
+              {/* Fallback */}
+              <Route path="*" element={<LandingPage />} />
+            </Routes>
+          </LanguageProvider>
         </ProductProvider>
       </AuthProvider>
     </Router>
