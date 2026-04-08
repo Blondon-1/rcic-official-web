@@ -14,8 +14,8 @@ import Footer from './components/Footer';
 import Stats from './components/Stats';
 import Newsletter from './components/Newsletter';
 import Logistics from './components/Logistics';
-import FAQ from './components/FAQ';
 import ScrollReveal from './components/ScrollReveal';
+import FloatingActions from './components/FloatingActions';
 import Login from './components/Auth/Login';
 import AdminDashboard from './components/Admin/Admin';
 import ProtectedRoute from './components/Auth/ProtectedRoute';
@@ -50,22 +50,15 @@ const LandingPage = () => (
         <Hero />
         <Stats />
         <Intro />
-        <Intro />
         <Logistics />
         <Objectives />
         <Products />
         <Testimonials />
         <Newsletter />
         <Customers />
-        <FAQ />
       </main>
       <Footer />
-      <a href="mailto:rwandacosmeticsimporterscooper@gmail.com" className="email-float-btn">
-        <span style={{ fontSize: '1.2rem', marginRight: '8px' }}>✉️</span> Email Us
-      </a>
-      <a href="https://wa.me/250792404334" className="whatsapp-float-btn" target="_blank" rel="noopener noreferrer">
-        <span style={{ fontSize: '1.2rem', marginRight: '8px' }}>💬</span> Live Chat
-      </a>
+      <FloatingActions />
     </div>
   </>
 );
