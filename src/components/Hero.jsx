@@ -1,4 +1,3 @@
-import React from 'react';
 import React, { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import './Hero.css';
