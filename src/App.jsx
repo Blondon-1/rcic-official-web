@@ -27,6 +27,7 @@ const LandingPage = () => (
       loop
       muted
       playsInline
+      poster="/assets/logo.jpg"
       className="bg-video"
       style={{
         position: 'fixed',
