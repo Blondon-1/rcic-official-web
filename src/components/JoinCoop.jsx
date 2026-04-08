@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import { useLanguage } from '../context/LanguageContext';
 import './JoinCoop.css';
 
 const JoinCoop = () => {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     businessName: '',
     contactName: '',
@@ -15,10 +16,10 @@ const JoinCoop = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setStatus('Submitting...');
+    setStatus(t('submitting') || 'Submitting...');
     // Simulated submission to Secretary
     setTimeout(() => {
-      setStatus('Success! Your application has been sent to the Secretary.');
+      setStatus(t('formSuccess'));
       setFormData({
         businessName: '',
         contactName: '',
@@ -36,16 +37,15 @@ const JoinCoop = () => {
       <div className="container">
         <div className="join-container glass">
           <div className="join-info">
-            <h2 className="section-title" style={{ textAlign: 'left', marginBottom: '1.5rem' }}>Join the Cooperative</h2>
+            <h2 className="section-title" style={{ textAlign: 'left', marginBottom: '1.5rem' }}>{t('joinCoop')}</h2>
             <p className="join-lead">
-              Empower your beauty business with official RCIC membership. Gain access to collective logistics, 
-              regulatory support, and exclusive wholesale rates from world-class brands.
+              {t('joinLead')}
             </p>
             <ul className="benefits-list">
-              <li>🛡️ Official FDA & RSB Compliance Support</li>
-              <li>🚢 Collective Shipping & Tax Optimization</li>
-              <li>🎫 Exclusive Invites to Importers Summits</li>
-              <li>🤝 Networking with Rwanda's Beauty Leaders</li>
+              <li>🛡️ {t('benefit1')}</li>
+              <li>🚢 {t('benefit2')}</li>
+              <li>🎫 {t('benefit3')}</li>
+              <li>🤝 {t('benefit4')}</li>
             </ul>
           </div>
 
@@ -53,7 +53,7 @@ const JoinCoop = () => {
             <form onSubmit={handleSubmit} className="join-form">
               <div className="form-row">
                 <div className="input-group">
-                  <label>Business / Shop Name</label>
+                  <label>{t('formBusiness')}</label>
                   <input 
                     type="text" 
                     required 
@@ -62,7 +62,7 @@ const JoinCoop = () => {
                   />
                 </div>
                 <div className="input-group">
-                  <label>Contact Person Name</label>
+                  <label>{t('formContact')}</label>
                   <input 
                     type="text" 
                     required 
@@ -74,7 +74,7 @@ const JoinCoop = () => {
 
               <div className="form-row">
                 <div className="input-group">
-                  <label>Phone Number (+250...)</label>
+                  <label>{t('formPhone')}</label>
                   <input 
                     type="tel" 
                     required 
@@ -83,7 +83,7 @@ const JoinCoop = () => {
                   />
                 </div>
                 <div className="input-group">
-                  <label>Email Address</label>
+                  <label>{t('formEmail')}</label>
                   <input 
                     type="email" 
                     required 
@@ -95,7 +95,7 @@ const JoinCoop = () => {
 
               <div className="form-row">
                 <div className="input-group">
-                  <label>Business Type</label>
+                  <label>{t('formType')}</label>
                   <select 
                     value={formData.businessType}
                     onChange={(e) => setFormData({...formData, businessType: e.target.value})}
@@ -107,7 +107,7 @@ const JoinCoop = () => {
                   </select>
                 </div>
                 <div className="input-group">
-                  <label>Years of Operation</label>
+                  <label>{t('formExp')}</label>
                   <select 
                     value={formData.experience}
                     onChange={(e) => setFormData({...formData, experience: e.target.value})}
@@ -120,7 +120,7 @@ const JoinCoop = () => {
               </div>
 
               <div className="input-group">
-                <label>Tell us about your business goals</label>
+                <label>{t('formGoals')}</label>
                 <textarea 
                   rows="4" 
                   value={formData.message}
@@ -129,10 +129,10 @@ const JoinCoop = () => {
               </div>
 
               <button type="submit" className="btn btn-primary join-submit-btn">
-                Submit Membership Application
+                {t('formSubmit')}
               </button>
 
-              {status && <div className={`form-status ${status.includes('Success') ? 'success' : ''}`}>{status}</div>}
+              {status && <div className={`form-status ${status.includes('Success') || status.includes('Byagenze') || status.includes('Succès') ? 'success' : ''}`}>{status}</div>}
             </form>
           </div>
         </div>

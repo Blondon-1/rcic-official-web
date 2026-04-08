@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { useProducts } from '../context/ProductContext';
+import { useLanguage } from '../context/LanguageContext';
 import './Products.css';
 
 const Products = () => {
   const { isAdmin } = useAuth();
   const { brands, addProduct, deleteProduct, updateProduct } = useProducts();
+  const { t } = useLanguage();
 
   // Modals & Navigation
   const [selectedBrand, setSelectedBrand] = useState(null);
@@ -21,6 +23,15 @@ const Products = () => {
   const [editProduct, setEditProduct] = useState({ name: '', desc: '', img: '', id: '', category: 'General' });
 
   const categories = ['All', 'Skincare', 'Haircare', 'Perfumes', 'Hygiene', 'General'];
+  
+  const categoryMap = {
+    'All': t('all'),
+    'Skincare': t('skincare'),
+    'Haircare': t('haircare'),
+    'Perfumes': t('perfumes'),
+    'Hygiene': t('hygiene'),
+    'General': t('general')
+  };
 
   // Filtering Logic
   const filteredBrands = brands.filter(brand => {
@@ -67,7 +78,7 @@ const Products = () => {
       <div className="container" style={{ maxWidth: '1400px' }}>
         <div className="products-header">
           <div className="header-top">
-            <h2 className="section-title">Our Complete Catalog</h2>
+            <h2 className="section-title">{t('productsTitle')}</h2>
             {isAdmin && (
               <button className="btn btn-outline admin-add-btn" onClick={() => setIsAddModalOpen(true)}>
                 + Admin: Add Product
@@ -80,7 +91,7 @@ const Products = () => {
               <span className="search-icon">🔍</span>
               <input 
                 type="text" 
-                placeholder="Search brands or products..." 
+                placeholder={t('searchPlaceholder')} 
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="search-input"
@@ -94,7 +105,7 @@ const Products = () => {
                   className={`filter-chip ${activeCategory === cat ? 'active' : ''}`}
                   onClick={() => setActiveCategory(cat)}
                 >
-                  {cat}
+                  {categoryMap[cat]}
                 </button>
               ))}
             </div>
