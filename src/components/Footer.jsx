@@ -22,9 +22,10 @@ const Footer = () => {
       <div className="footer-content container">
         <div className="footer-grid">
           <div className="footer-brand">
-            <img src="/assets/logo.jpg" alt="Rwanda Cosmetics Importers Cooperative" className="footer-logo-img" />
-            <p className="footer-slogan">Bringing the World's Beauty Closer to Rwanda.</p>
+            <img src="/assets/logo.jpg" alt="Rwanda Cosmetics Importers Cooperative Official Footer Logo" className="footer-logo-img" aria-label="RCIC Rwanda Footer Logo" />
+            <p className="footer-slogan">RCIC Rwanda: Bringing the World's Beauty Closer to Rwanda.</p>
           </div>
+
 
           <div className="footer-closing">
             <blockquote>

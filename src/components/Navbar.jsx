@@ -19,8 +19,8 @@ const Navbar = () => {
   return (
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container nav-container">
-        <a href="#" className="logo-link">
-          <img src="/assets/logo.jpg" alt="Rwanda Cosmetics Importers Cooperative" className="logo-img" />
+        <a href="#" className="logo-link" title="RCIC Rwanda Official Website">
+          <img src="/assets/logo.jpg" alt="Rwanda Cosmetics Importers Cooperative (RCIC) Official Logo" aria-label="RCIC Rwanda Logo" className="logo-img" />
         </a>
         
         <ul className={`nav-links ${isOpen ? 'open' : ''}`}>

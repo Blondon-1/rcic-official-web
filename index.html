@@ -26,31 +26,46 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "WholesaleStore",
-      "name": "Rwanda Cosmetics Importers Cooperative",
-      "alternateName": "RCIC",
-      "description": "Leading distributor and importer of professional global cosmetics brands in Rwanda.",
-      "url": "https://rcic-official-web.vercel.app",
-      "logo": "https://rcic-official-web.vercel.app/assets/logo.jpg",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Kigali City Market, Nyarugenge",
-        "addressLocality": "Kigali",
-        "addressRegion": "Kigali City",
-        "addressCountry": "RW"
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+250-792-404-334",
-        "contactType": "Customer Service",
-        "areaServed": "RW",
-        "availableLanguage": ["English", "French", "Kinyarwanda"]
-      },
-      "brand": ["L'Oreal", "CeraVe", "Garnier", "Nivea", "Mielle", "Dove"],
-      "sameAs": [
-        "https://www.facebook.com/rcic",
-        "https://www.instagram.com/rcic_rwanda",
-        "https://twitter.com/rcic_rwanda"
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://rcic-official-web.vercel.app/#organization",
+          "name": "Rwanda Cosmetics Importers Cooperative (RCIC)",
+          "alternateName": "RCIC Rwanda",
+          "url": "https://rcic-official-web.vercel.app",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://rcic-official-web.vercel.app/assets/logo.jpg",
+            "caption": "RCIC Rwanda Official Logo"
+          },
+          "sameAs": [
+            "https://rcic-official-web.vercel.app"
+          ]
+        },
+        {
+          "@type": "WholesaleStore",
+          "@id": "https://rcic-official-web.vercel.app/#store",
+          "name": "Rwanda Cosmetics Importers Cooperative",
+          "alternateName": "RCIC Official Distribution",
+          "description": "Leading distributor and importer of professional global cosmetics brands in Rwanda. Authorized by RCA, RRA, and Rwanda FDA.",
+          "url": "https://rcic-official-web.vercel.app",
+          "isAccessibleForFree": true,
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Kigali City Market, Nyarugenge",
+            "addressLocality": "Kigali",
+            "addressRegion": "Kigali City",
+            "addressCountry": "RW"
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+250-792-404-334",
+            "contactType": "Customer Service",
+            "areaServed": "RW",
+            "availableLanguage": ["English", "French", "Kinyarwanda"]
+          },
+          "brand": ["L'Oreal", "CeraVe", "Garnier", "Nivea", "Mielle", "Dove", "Aunt Jackie's", "Cetaphil"]
+        }
       ]
     }
     </script>
