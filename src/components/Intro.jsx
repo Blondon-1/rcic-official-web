@@ -8,7 +8,7 @@ const Intro = () => {
     <section id="about" className="section intro-section">
       <div className="container intro-grid">
         <div className="intro-text">
-          <h2 className="section-title" style={{ textAlign: 'left' }}>{t('whoWeAre')}</h2>
+          <h2 className="section-title" style={{ textAlign: 'left' }}>RCIC Rwanda: {t('whoWeAre')}</h2>
           <p className="intro-lead">
             {t('introLead')}
           </p>

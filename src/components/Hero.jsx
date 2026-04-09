@@ -9,9 +9,9 @@ const Hero = () => {
       <div className="hero-overlay"></div>
       <div className="container hero-content">
         <div className="hero-brand-name animate-fade-in-up">
-          <p className="hero-description shimmer-text">RCIC</p>
+          <p className="hero-description shimmer-text">RCIC Rwanda | Official Website</p>
           <h1 className="hero-title">{t('heroTitle')}</h1>
-          <p className="hero-subtitle">{t('heroSubtitle')}</p>
+          <h2 className="hero-subtitle">{t('heroSubtitle')}</h2>
         </div>
         <div className="hero-cta animate-fade-in-up delay-200">
           <a href="#about" className="btn btn-outline" style={{ color: '#fff', borderColor: '#fff' }}>Our Story</a>
