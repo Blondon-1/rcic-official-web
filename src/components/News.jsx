@@ -3,7 +3,7 @@ import './News.css';
 
 const News = () => {
   const { t, language } = useLanguage();
-  
+
   const newsData = {
     en: [
       { date: "April 15, 2026", tag: "FDA Update", title: "New Regulatory Guidelines for Skincare Imports", desc: "Rwanda FDA has released updated compliance standards for hyaluronic acid and retinol-based products." },
