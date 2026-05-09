@@ -41,7 +41,7 @@ const Footer = () => {
               📞 +250 788 863 957 <a href="https://wa.me/250788863957" target="_blank" rel="noopener noreferrer" className="wa-link">💬 WhatsApp</a>
             </div>
             <div className="contact-detail">
-              <strong>V/President:</strong> Ingabire Mary<br/>
+              <strong>V/President:</strong> Umutoni Mary<br/>
               📞 +250 788 525 397 <a href="https://wa.me/250788525397" target="_blank" rel="noopener noreferrer" className="wa-link">💬 WhatsApp</a>
             </div>
             <div className="contact-detail">
